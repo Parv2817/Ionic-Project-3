@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ faqId ? 'Update FAQ' : 'Add FAQ' }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Question</ion-label>
+    <ion-input [(ngModel)]="faq.question"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Answer</ion-label>
+    <ion-input [(ngModel)]="faq.answer"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" color="success" (click)="presentSaveActionSheet()">{{ faqId ? 'Update' : 'Add' }}</ion-button>
+  <ion-button expand="full" color="danger" (click)="presentDeleteActionSheet()" *ngIf="faqId">Delete</ion-button>
+  
+  <ion-text>{{ message }}</ion-text>
+</ion-content>

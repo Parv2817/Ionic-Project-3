@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of All FAQs</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let faq of faqs" [routerLink]="['/update', faq._id]">
+      <ion-label>
+        <h2>{{ faq.question }}</h2>
+        <p>{{ faq.answer }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

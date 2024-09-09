@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Main Page</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Database Name</ion-label>
+    <ion-input [(ngModel)]="databaseName" type="text" [disabled]="isDbCreated"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Collection Name</ion-label>
+    <ion-input [(ngModel)]="collectionName" type="text" [disabled]="isDbCreated"></ion-input>
+  </ion-item>
+  <ion-button color="secondary" (click)="createDbAndCollection()" [disabled]="isDbCreated">Create Database & Collection</ion-button>
+  <ion-button color="medium" (click)="loadData()">Load Sample Data</ion-button><br>
+  <ion-button color="danger" (click)="presentDeleteAllActionSheet()">Delete All Data</ion-button><br><br>
+
+  <ion-text [ngStyle]="{'border': '2px solid brown', 'padding': '4px'}">{{message}}</ion-text>
+</ion-content>

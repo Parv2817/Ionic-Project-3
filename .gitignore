@@ -1,0 +1,11 @@
+# Node.js
+node_modules/
+.env
+
+# Ionic
+www/
+platforms/
+plugins/
+
+# macOS specific files
+.DS_Store
